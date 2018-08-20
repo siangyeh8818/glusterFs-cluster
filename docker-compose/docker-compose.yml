@@ -12,4 +12,4 @@ services:
 #       environment:
        volumes:
           - /etc/localtime:/etc/localtime
-#          - /etc/hosts:/etc/hosts:rw
+          - /data/gfs:/data/gfs
