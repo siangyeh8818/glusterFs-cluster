@@ -1,0 +1,15 @@
+version: '2.1'
+services:
+    ntp-server:
+       image: gfs:v1
+       container_name: glusterFs-cluster
+       restart: always
+       privileged: true
+#       environment:
+#         - NTP_CLUSTER_IP_LIST=172.16.106.130,172.16.106.131,172.16.106.132
+#         - NTP_NODE_USER=deployer
+#         - NTP_NODE_PASSWORD=Emotibot1
+#         - SPECIFY_NTP_SERVER=tw.pool.ntp.org
+#         - BIOS_TIME_CORRETCION=True
+       volumes:
+          - /etc/localtime:/etc/localtime
