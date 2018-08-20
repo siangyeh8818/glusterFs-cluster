@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-    ntp-server:
+    GlusterFS:
        image: gfs:v1
        container_name: glusterFs-cluster
        network_mode: host
