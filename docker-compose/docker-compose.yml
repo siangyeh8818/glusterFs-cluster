@@ -3,6 +3,7 @@ services:
     ntp-server:
        image: gfs:v1
        container_name: glusterFs-cluster
+       network_mode: host
        restart: always
        privileged: true
 #       environment:
