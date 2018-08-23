@@ -25,4 +25,4 @@ RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
 #RUN echo "/bin/bash -c /usr/local/bin/docker-entrypoint.sh" >> /etc/rc.local
 RUN chmod 777 /etc/rc.local
 ENTRYPOINT ["/bin/bash","-c","/usr/sbin/init"]
-CMD ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["&& /usr/local/bin/docker-entrypoint.sh"]
