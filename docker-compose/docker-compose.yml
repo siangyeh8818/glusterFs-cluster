@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     GlusterFS:
-       image: gfs:v6
+       image: gfs:v18
        container_name: glusterFs-cluster
        network_mode: host
        restart: always
@@ -9,7 +9,8 @@ services:
        extra_hosts:
          - "gfs1:172.16.106.130"
          - "gfs2:172.16.106.131"
-#       environment:
+       environment:
+         - PLATFORM_MODE=host
        volumes:
           - /etc/localtime:/etc/localtime
           - /data/gfs:/opt/gfs

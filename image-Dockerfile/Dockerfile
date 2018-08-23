@@ -1,4 +1,4 @@
-From gluster/gluster-centos:gluster3u12_centos7
+From gluster/gluster-centos
 
 RUN yum -y install wget curl
 
@@ -20,5 +20,9 @@ ENV PATH=$PATH:$GOBIN:$GOPKG:$GOPATH/bin
 RUN mkdir -p /data/gfs
 RUN mkdir -p /opt/gfs
 
-COPY docker-entrypoint.sh /usr/local/bin/ 
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh 
+#RUN echo "/bin/bash -c /usr/local/bin/docker-entrypoint.sh" >> /etc/rc.local
+RUN chmod 777 /etc/rc.local
+ENTRYPOINT ["/bin/bash","-c","/usr/sbin/init"]
 CMD ["/usr/local/bin/docker-entrypoint.sh"]
