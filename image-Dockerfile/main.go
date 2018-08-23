@@ -50,6 +50,7 @@ func main() {
 			fmt.Println("Volume is already existing , you don't need to create volume")
 		}
 		fmt.Println("Finish init glusterFS cluster........")
+//		exec_shell("mount -t glusterfs localhost:gfs_bfop /opt/gfs")
         }
 //      true_result,err_result := exec_shell("gluster peer status")
 }
@@ -66,7 +67,7 @@ func createvolume(node_list string, replica_nu string) {
 	fmt.Println(combin_command)
         exec_shell(combin_command)
 	exec_shell("gluster volume start gfs_bfop")
-	exec_shell("mount -t glusterfs localhost:gfs_bfop /opt/gfs")
+//	exec_shell("mount -t glusterfs localhost:gfs_bfop /opt/gfs")
 }
 
 func addcluster(node_name string) {
@@ -114,7 +115,6 @@ func read_etchosts() (string){
 	scanner.Split(bufio.ScanLines)
 	//是否有下一行
 	for scanner.Scan() {
-//		fmt.Println(strings.Contains(scanner.Text(),"ip6")|| strings.Contains(scanner.Text(),"localhost"))
 		if (strings.Contains(scanner.Text(),"ip6")|| strings.Contains(scanner.Text(),"localhost")) != true {
 			fmt.Println("read string:",scanner.Text())
 			temp := strings.Split(scanner.Text(),"	")

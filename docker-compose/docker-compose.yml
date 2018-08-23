@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     GlusterFS:
-       image: gfs:v18
+       image: siangyeh8818/glusterfs-cluster:v1
        container_name: glusterFs-cluster
        network_mode: host
        restart: always
@@ -13,4 +13,4 @@ services:
          - PLATFORM_MODE=host
        volumes:
           - /etc/localtime:/etc/localtime
-          - /data/gfs:/opt/gfs
+          - /data/gfs:/data/gfs
