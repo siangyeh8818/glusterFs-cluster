@@ -16,7 +16,7 @@ GFS的client端 : siangyeh8818/glusterfs-client:v1-ubuntu <br>
 佈署前設定:
 ---
 修正/docker-compose內的docker-compose.yml , 對extra_hosts的設定 , 改成你所需要的ip , 集群個數並不限定於3台 <br>
-P.S : 要注意的是, gfs-client要重新build
+P.S : 要注意的是, gfs-client的範例內的yml檔, 對extra_hosts的設定 , 也必須設定成一樣
 
 佈署方式:
 ---
