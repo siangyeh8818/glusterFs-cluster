@@ -1,8 +1,8 @@
 version: '3.1'
 services:
-    GlusterFS:
-       image: siangyeh8818/glusterfs-cluster:v1
-       container_name: glusterFs-cluster
+    GFS-client:
+       image: gfs-client:v1
+       container_name: glusterFs-client
        network_mode: host
        restart: always
        privileged: true
@@ -10,8 +10,5 @@ services:
          - "gfs1:172.16.106.130"
          - "gfs2:172.16.106.131"
          - "gfs3:172.16.106.132"
-       environment:
-         - PLATFORM_MODE=host
        volumes:
           - /etc/localtime:/etc/localtime
-          - /data/gfs:/data/gfs
