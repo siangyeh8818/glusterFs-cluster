@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     GFS-client:
-       image: gfs-client:v1
+       image: siangyeh8818/gluster-client:v1-ubuntu"
        container_name: glusterFs-client
        network_mode: host
        restart: always
